@@ -1,0 +1,26 @@
+name: BlobConcat
+
+on:[push]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+
+    - uses: actions/checkout@v1
+    - name: Download the salary
+      run: python3 ~/sal_download.py
+
+    - name: Download the savings
+      run: |
+        python3 ~/sav_download.py
+
+    - name: Concatenate tables
+      run: |
+        python3 ~/concat.py
+
+    - name: Upload the new table
+      run: |
+        python3 ~/upload.py
+
