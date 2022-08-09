@@ -10,17 +10,17 @@ jobs:
 
     - uses: actions/checkout@v1
     - name: Download the salary
-      run: python3 ~/sal_download.py
+      run: python3 ~/git_repo/sal_download.py
 
     - name: Download the savings
       run: |
-        python3 ~/sav_download.py
+        python3 ~/git_repo/sav_download.py
 
     - name: Concatenate tables
       run: |
-        python3 ~/concat.py
+        python3 ~/git_repo/concat.py
 
     - name: Upload the new table
       run: |
-        python3 ~/upload.py
+        python3 ~/git_repo/upload.py
 
